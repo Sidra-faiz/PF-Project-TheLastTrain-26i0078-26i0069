@@ -3,6 +3,7 @@
 // Primitive helper utilities, clamping, and screen control
 #include <iostream>
 #include <cstring>
+using namespace std;
 
 int clampInt(int val, int minVal, int maxVal) {
     if (val < minVal) {
@@ -30,7 +31,7 @@ void trimWhitespace(char* str) {
         return;
     }
 
-    int end = static_cast<int>(std::strlen(str)) - 1;
+    int end = static_cast<int>(strlen(str)) - 1;
     while (end > start && (str[end] == ' ' || str[end] == '\t' || str[end] == '\r' || str[end] == '\n')) {
         end--;
     }
@@ -64,13 +65,13 @@ bool stringEquals(const char* a, const char* b) {
 //koi b heading print k lie wo 2 lines k drmyan hogi print
 void printHeader(const char* title) {
     const char* safeTitle = (title != nullptr) ? title : "";
-    std::cout << "========================================\n";
-    std::cout << safeTitle << "\n";
-    std::cout << "========================================\n";
+    cout << "========================================\n";
+    cout << safeTitle << "\n";
+    cout << "========================================\n";
 }
 //40 khaali lines print ho chuki hoti hain, jis se purana text upar scroll ho kar screen saaf nazar aati hai.
 void clearScreen() {
     for (int i = 0; i < 40; ++i) {
-        std::cout << '\n';
+    cout << '\n';
     }
 }
